@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.9.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfGemiusTrafficPlugin</name>
+ <channel>plugins.symfony-project.org</channel>
+ <summary>Easily add Gemius Traffic to your symfony project.</summary>
+ <description>Easily add Gemius Traffic to your symfony project.</description>
+ <lead>
+  <name>Tomasz Jakub Rup</name>
+  <user>tomi</user>
+  <email>tomasz.rup@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-10-22</date>
+ <time>09:50:31</time>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.symfony-project.org/license">MIT license</license>
+ <notes>
+Initial release
+ </notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="8afc9151cdb87aa8b17aaaccdba72923" name="lib/filter/sfGemiusTrafficFilter.class.php" role="data"/>
+   <file md5sum="224c995aa0ceb67e6c8c17a4a94427f8" name="lib/mixin/sfGemiusTrafficMixin.class.php" role="data"/>
+   <file md5sum="18615b865c52f92e36b2c47a8e13d5e4" name="lib/tracker/sfGemiusTrafficTracker.class.php" role="data"/>
+   <file md5sum="5e093f12be49156e1fe38604f9251964" name="lib/util/sfGemiusTrafficToolkit.class.php" role="data"/>
+   <file md5sum="09a9c014fdfd869d03760a688f1ead59" name="lib/listener/sfGemiusTrafficListener.class.php" role="data"/>
+   <file md5sum="0fee0d08df02b78a51c02c7483638022" name="config/config.php" role="data"/>
+   <file md5sum="5c4f3ae3aef97cb065b1542b0687a2fd" name="web/js/gemius.js" role="data"/>
+   <file md5sum="7ef8290f55888f848c9fab3aa66a23c4" name="LICENSE" role="data"/>
+   <file md5sum="40ebe306f154a523e9344a81482d271c" name="README" role="data"/>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.4</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   
+  </required>
+ </dependencies>
+ <phprelease/>
+ <changelog>
+  <release>
+   <date>2010-10-22</date>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.symfony-project.org/license">MIT license</license>
+   <notes>
+Initial release
+   </notes>
+  </release>
+ </changelog>
+</package>
