@@ -7,10 +7,9 @@
  */
 class sfGemiusTrafficTracker
 {
-    const
-    POSITION_HEAD = 'head',
-    POSITION_BODY_TOP = 'top',
-    POSITION_BODY_BOTTOM = 'bottom';
+    const POSITION_HEAD = 'head';
+    const POSITION_BODY_TOP = 'top';
+    const POSITION_BODY_BOTTOM = 'bottom';
 
     protected $enabled = false;
     protected $identifier = null;
@@ -23,7 +22,7 @@ class sfGemiusTrafficTracker
 
     public function initialize($parameters = array())
     {
-        $this->parameterHolder = class_exists('sfNamespacedParameterHolder') ? new sfNamespacedParameterHolder : new sfParameterHolder;
+        $this->parameterHolder = class_exists('sfNamespacedParameterHolder') ? new sfNamespacedParameterHolder() : new sfParameterHolder();
         $this->parameterHolder->add($parameters);
 
         // apply configuration from app.yml
@@ -42,14 +41,14 @@ class sfGemiusTrafficTracker
     /**
      * Apply non-null configuration values.
      *
-     * @param   array $params
+     * @param array $params
      */
     public function configure($params)
     {
         $params = array_merge([
-      'enabled'                     => null,
-      'identifier'                  => null,
-      'insertion'                   => null, ], $params);
+      'enabled' => null,
+      'identifier' => null,
+      'insertion' => null, ], $params);
 
         if (!is_null($params['enabled'])) {
             $this->setEnabled($params['enabled']);
@@ -85,7 +84,7 @@ class sfGemiusTrafficTracker
     /**
      * Toggle tracker's enabled state.
      *
-     * @param   bool $enabled
+     * @param bool $enabled
      */
     public function setEnabled($enabled)
     {
@@ -100,7 +99,7 @@ class sfGemiusTrafficTracker
     /**
      * Add a custom tracking variable to this cookie.
      *
-     * @param   string $identifier
+     * @param string $identifier
      */
     public function setIdentifier($identifier)
     {
@@ -115,7 +114,7 @@ class sfGemiusTrafficTracker
     /**
      * Add a custom tracking variable to this cookie.
      *
-     * @param   string $profile_id
+     * @param string $profile_id
      */
     public function setInsertion($insertion)
     {
@@ -130,7 +129,7 @@ class sfGemiusTrafficTracker
     /**
      * Insert tracking code into a response.
      *
-     * @param   sfResponse $response
+     * @param sfResponse $response
      */
     public function insert(sfResponse $response)
     {
@@ -153,9 +152,9 @@ class sfGemiusTrafficTracker
     /**
      * Insert content into a response.
      *
-     * @param   sfResponse $response
-     * @param   string $content
-     * @param   string $position
+     * @param sfResponse $response
+     * @param string $content
+     * @param string $position
      */
     protected function doInsert(sfResponse $response, $content, $position = null)
     {
@@ -174,14 +173,17 @@ class sfGemiusTrafficTracker
             switch ($position) {
         case self::POSITION_HEAD:
         $new = str_ireplace('</head>', "\n".$content."\n</head>", $old);
+
         break;
 
         case self::POSITION_BODY_TOP:
         $new = preg_replace('/<body[^>]*>/i', "$0\n".$content."\n", $old, 1);
+
         break;
 
         case self::POSITION_BODY_BOTTOM:
         $new = str_ireplace('</body>', "\n".$content."\n</body>", $old);
+
         break;
       }
 
@@ -196,12 +198,12 @@ class sfGemiusTrafficTracker
     /**
      * Apply common options to a value.
      *
-     * @param   mixed $value
-     * @param   mixed $options
+     * @param mixed $value
+     * @param mixed $options
      *
-     * @return  bool  whether to continue execution
+     * @return bool whether to continue execution
      */
-    protected function prepare(& $value, & $options = [])
+    protected function prepare(&$value, &$options = [])
     {
         if (is_string($options)) {
             $options = sfToolkit::stringToArray($options);
@@ -229,8 +231,8 @@ class sfGemiusTrafficTracker
     /**
      * Plant a callable to be executed against the next request's tracker.
      *
-     * @param   string $method
-     * @param   array $arguments
+     * @param string $method
+     * @param array $arguments
      */
     protected function plant($method, $arguments = [])
     {
@@ -248,7 +250,7 @@ class sfGemiusTrafficTracker
     /**
      * Update storage with callables for the next tracker.
      *
-     * @param   sfUser $user
+     * @param sfUser $user
      */
     public function shutdown($user)
     {

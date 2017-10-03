@@ -10,9 +10,9 @@ class sfGemiusTrafficToolkit
     /**
      * Log a message.
      *
-     * @param   mixed   $subject
-     * @param   string  $message
-     * @param   string  $priority
+     * @param mixed  $subject
+     * @param string $message
+     * @param string $priority
      */
     public static function logMessage($subject, $message, $priority = 'info')
     {

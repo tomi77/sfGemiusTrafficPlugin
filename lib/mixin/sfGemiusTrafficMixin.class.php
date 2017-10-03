@@ -10,7 +10,7 @@ class sfGemiusTrafficMixin
     /**
      * Get the current request's tracker object.
      *
-     * @return  sfGemiusTrafficTracker
+     * @return sfGemiusTrafficTracker
      */
     public static function getTracker()
     {
@@ -20,7 +20,7 @@ class sfGemiusTrafficMixin
     /**
      * Set the current request's tracker object.
      *
-     * @param   sfGemiusTrafficTracker $tracker
+     * @param sfGemiusTrafficTracker $tracker
      */
     public static function setTracker(sfGemiusTrafficTracker $tracker)
     {

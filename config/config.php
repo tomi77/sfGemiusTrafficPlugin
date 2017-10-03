@@ -1,4 +1,5 @@
 <?php
+
 $listener = ['sfGemiusTrafficListener', 'observe'];
 
 $this->dispatcher->connect('request.method_not_found', $listener);

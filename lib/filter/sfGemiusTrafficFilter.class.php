@@ -10,13 +10,13 @@ class sfGemiusTrafficFilter extends sfFilter
     /**
      * Insert tracking code for applicable web requests.
      *
-     * @param   sfFilterChain $filterChain
+     * @param sfFilterChain $filterChain
      */
     public function execute($filterChain)
     {
-        $prefix   = 'app_gemius_traffic_plugin_';
-        $user     = $this->context->getUser();
-        $request  = $this->context->getRequest();
+        $prefix = 'app_gemius_traffic_plugin_';
+        $user = $this->context->getUser();
+        $request = $this->context->getRequest();
         $response = $this->context->getResponse();
 
         if ($this->isFirstCall()) {
@@ -69,8 +69,8 @@ class sfGemiusTrafficFilter extends sfFilter
      */
     protected function isTrackable()
     {
-        $request    = $this->context->getRequest();
-        $response   = $this->context->getResponse();
+        $request = $this->context->getRequest();
+        $response = $this->context->getResponse();
         $controller = $this->context->getController();
 
         // don't add analytics:
