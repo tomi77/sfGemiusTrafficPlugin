@@ -1,8 +1,6 @@
 <?php
 
 /**
- *
- *
  * @author      Tomasz Jakub Rup <tomasz.rup@gmail.com>
  */
 class sfGemiusTrafficTracker
@@ -153,8 +151,8 @@ class sfGemiusTrafficTracker
      * Insert content into a response.
      *
      * @param sfResponse $response
-     * @param string $content
-     * @param string $position
+     * @param string     $content
+     * @param string     $position
      */
     protected function doInsert(sfResponse $response, $content, $position = null)
     {
@@ -232,7 +230,7 @@ class sfGemiusTrafficTracker
      * Plant a callable to be executed against the next request's tracker.
      *
      * @param string $method
-     * @param array $arguments
+     * @param array  $arguments
      */
     protected function plant($method, $arguments = [])
     {

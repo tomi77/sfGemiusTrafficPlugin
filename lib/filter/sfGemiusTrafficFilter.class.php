@@ -65,7 +65,7 @@ class sfGemiusTrafficFilter extends sfFilter
     /**
      * Test whether the response is trackable.
      *
-     * @return  bool
+     * @return bool
      */
     protected function isTrackable()
     {
