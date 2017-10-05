@@ -1,0 +1,22 @@
+{
+    "name": "tomasz-rup/sf-gemius-traffic-plugin",
+    "type": "library",
+    "description": "symfony 1.x plugin to add Gemius integration",
+    "keywords": ["symfony1", "symfony1-plugin", "gemius"],
+    "require": {
+        "symfony/symfony1": "*",
+        "composer/installers": "*"
+    },
+    "license": "MIT",
+    "support": {
+      "issues": "https://github.com/tomi77/sfGemiusTrafficPlugin/issues",
+      "source": "https://github.com/tomi77/sfGemiusTrafficPlugin"
+    },
+    "authors": [
+        {
+            "name": "Tomasz Jakub Rup",
+            "email": "tomasz.rup@gmail.com",
+            "role": "Creator"
+        }
+    ]
+}
