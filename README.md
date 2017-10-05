@@ -1,15 +1,15 @@
-# sfGemiusTrafficPlugin plugin #
+# sfGemiusTrafficPlugin plugin
 
 Easily add [Gemius Traffic](http://www.gemius.pl/) tracking code to your presentation layer.
 
 [![StyleCI](https://styleci.io/repos/49592179/shield?style=plastic&branch=master)](https://styleci.io/repos/49592179)
 
-## Installation ##
+## Installation
 
   * Install plugin:
 
     ~~~sh
-    $ symfony plugin:install sfGemiusTrafficPlugin
+    $ composer require tomasz-rup/sf-gemius-traffic-plugin
     ~~~
 
   * Add the `sfGemiusTrafficFilter` to your filter chain:
@@ -27,14 +27,14 @@ Easily add [Gemius Traffic](http://www.gemius.pl/) tracking code to your present
     execution: ~
     ~~~
 
-## Configure ##
+## Configure
 
   * Enable plugin in your application's `app.yml` file:
 
     ~~~yaml
     all:
       gemius_traffic_plugin:
-        enabled:   true
+        enabled: true
     ~~~
 
   * Optionally set the position of Gemius Traffic code:
@@ -45,7 +45,7 @@ Easily add [Gemius Traffic](http://www.gemius.pl/) tracking code to your present
         insertion: <?php echo sfGemiusTrafficTracker::POSITION_HEAD ?>
     ~~~
 
-    Note: POSITION_HEAD is the default position.
+    Note: `POSITION_HEAD` is the default position.
 
   * set the action identifier in `module.yml`:
 
@@ -66,6 +66,20 @@ Easily add [Gemius Traffic](http://www.gemius.pl/) tracking code to your present
           identifier: 4re4r.4s4d55d2r5ff5.g1
     ~~~
 
-## Note ##
+## Insertion positions
+
+* `POSITION_HEAD`
+
+  Insert in `<head>`
+
+* `POSITION_BODY_TOP`
+
+  Insert as first element in `<body>`
+
+* `POSITION_BODY_BOTTOM`
+
+Insert as last element in `<body>`
+
+## Note
 
 Plugin code is fork of `sfGoogleAnalyticsPlugin`.
